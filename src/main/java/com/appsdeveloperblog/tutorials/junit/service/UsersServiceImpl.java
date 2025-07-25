@@ -37,6 +37,7 @@ public class UsersServiceImpl implements UsersService {
 
     @Override
     public UserDto createUser(UserDto user) {
+        System.out.println("createUser called");
 
         if (usersRepository.findByEmail(user.getEmail()) != null)
             throw new UsersServiceException("Record already exists");
